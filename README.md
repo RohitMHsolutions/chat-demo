@@ -46,7 +46,8 @@ php artisan migrate
 ##### Step : 6
 ```
 php artisan db:seed
-
+```
 ##### Step : 7
 ```
 npm run dev
+```
