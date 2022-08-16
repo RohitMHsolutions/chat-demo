@@ -24,9 +24,6 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('get-csrf-token', [HomeController::class, 'getCSRFToken']);
 
@@ -36,14 +33,10 @@ Route::middleware('auth')->group(function() {
     Route::get('messages/{sender_id}', [MessageController::class, 'load'])->name('messages');
     Route::get('check-messages', [MessageController::class, 'check'])->name('messages.check');
     Route::post('send-message', [MessageController::class, 'send'])->name('messages.send');
-    Route::delete('delete-message/{id}', [MessageController::class, 'delete'])->name('messages.delete');
+    Route::post('delete-message/{id}', [MessageController::class, 'delete'])->name('messages.delete');
     Route::post('read-message/{sender_id}', [MessageController::class, 'readMessage'])->name('messages.read');
 });
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
