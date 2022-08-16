@@ -16,7 +16,7 @@ Fire commands in terminal :
 #####  Step : 1
 
 ```
-git clone https://github.com/matrixhive-technologies/chat-demo.git
+git clone https://github.com/RohitMHsolutions/chat-demo.git
 ```
 ##### Step : 2
 
@@ -42,3 +42,11 @@ php artisan migrate
 - This will generate tables in db and some random dummy users to check app
 - You can use any email to login from users table.
 - All user's password is "password".
+
+##### Step : 6
+```
+php artisan db:seed
+
+##### Step : 7
+```
+npm run dev
